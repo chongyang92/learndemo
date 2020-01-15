@@ -27,4 +27,5 @@ nbdist/
 xml
 /.idea/
 /.mvn/
+/.mvn/wrapper
 /_windows/
