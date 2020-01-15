@@ -22,3 +22,9 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+### xml
+xml
+/.idea/
+/.mvn/
+/_windows/
