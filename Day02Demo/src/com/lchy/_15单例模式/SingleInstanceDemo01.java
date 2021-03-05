@@ -35,6 +35,8 @@ class SingleInstance01{
 
     private String name = test();
 
+    private int salary;
+
     private int age = testAge();
 
     //1.把类的构造器私有，构造器只能在本来中访问
@@ -54,7 +56,7 @@ class SingleInstance01{
 
     public int testAge(){
         System.out.println("testAge");
-        return 30;
+        return salary;
     }
 
     //有加载但是未被执行

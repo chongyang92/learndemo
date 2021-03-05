@@ -1,4 +1,4 @@
-package com.lchy._10内部类_匿名内部类;
+package com.lchy._10内部类_匿名内部类_重点;
 
 /**
     目标：匿名内部类概述
@@ -57,13 +57,16 @@ public class Anonymity {
         };
         dog.lookdoor();
 
+        //换成lambda之后的形式其中()中的参数是  height -> System.out.println("飞起来吧");
+        //一个参数可以不用写(),一条语句也不用写{}
+        //接口中有且仅有一个方法的，才可以改成lambda表达式
         Flyable flyable = new Flyable() {//匿名内部类，new 后面可以是接口,接口中只有一个方法，可以使用lambda表达式
             @Override
-            public void fly() {
+            public void fly(int height) {
                 System.out.println("飞起来吧");
             }
         };
-        flyable.fly();
+        flyable.fly(5);
     }
 }
 
@@ -77,6 +80,8 @@ class Cat extends Animal{
 }
 
 abstract class Animal{
+    public Animal(){}
+    public Animal(String name){}
     abstract void run();
 
     /*public void go(){
@@ -91,5 +96,5 @@ class Dog {
 }
 
 interface Flyable{
-    void fly();
+    void fly(int height);
 }
