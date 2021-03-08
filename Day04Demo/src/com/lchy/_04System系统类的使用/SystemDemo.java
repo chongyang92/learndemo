@@ -48,5 +48,6 @@ public class SystemDemo {
         System.out.println(Arrays.toString(arrs2));
 
         System.out.println("程序结束。。。");
+        System.out.println(Arrays.toString(Arrays.copyOf(arrs1, 4)));
     }
 }

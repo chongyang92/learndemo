@@ -8,6 +8,9 @@ import javax.print.attribute.standard.MediaSize;
     什么是实例内部类？
         无static修饰的内部类，属于外部类的每个对象，跟着对象一起加载。
 
+    格式：
+
+
     实例内部类的成份特点：
         实例内部类中不能定义静态变量和静态方法
         可以定义常量，static final
@@ -56,5 +59,8 @@ class Outter{
             System.out.println(address);
             System.out.println(salary);
         }
+    }
+    interface AA{
+
     }
 }

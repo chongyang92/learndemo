@@ -1,5 +1,7 @@
 package com.lchy._06内部类的概述;
 
+import java.util.HashMap;
+
 /**
     目标：内部类的概述和分类
 
@@ -17,6 +19,9 @@ package com.lchy._06内部类的概述;
  */
 //外部类，只能public 或者 不写,要么
 public class InnerClass {
+     class Inn{
+
+    }
 }
 
 

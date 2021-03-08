@@ -1,5 +1,7 @@
 package com.lchy._06包装类的使用;
 
+import java.math.BigDecimal;
+
 /**
     目标：包装类的特殊功能。
 
@@ -38,7 +40,7 @@ public class PackageClass02 {
         //int numInt = Integer.parseInt(numStr);
         int numInt = Integer.valueOf(numStr);
         System.out.println(numInt+1);
-
+        
         String doubleStr = "99.9";
         //double doubleDb = Double.parseDouble(doubleStr);
         double doubleDb = Double.valueOf(doubleStr);

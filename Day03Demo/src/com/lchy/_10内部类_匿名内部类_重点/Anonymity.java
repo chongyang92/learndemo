@@ -21,6 +21,32 @@ package com.lchy._10内部类_匿名内部类_重点;
         外部类名$2.class
  */
 public class Anonymity {
+
+    //构造方法中
+    public Anonymity(){
+        Dog dog = new Dog() { //匿名内部类，new 后面可以是类名
+            private int age;
+            //也可以不重写lookdoor方法
+            @Override
+            public void lookdoor() {
+                System.out.println("狗看门");
+            }
+        };
+        dog.lookdoor();
+    }
+
+    //代码块中
+    static{
+        Dog dog = new Dog() { //匿名内部类，new 后面可以是类名
+            //也可以不重写lookdoor方法
+            @Override
+            public void lookdoor() {
+                System.out.println("狗看门");
+            }
+        };
+        dog.lookdoor();
+    }
+
     public static void main(String[] args) {
         //在main方法内的内部类，局部内部类
         /*class A{
@@ -65,6 +91,11 @@ public class Anonymity {
             public void fly(int height) {
                 System.out.println("飞起来吧");
             }
+            //这里如果有两个抽象方法，Flyable就不能用lambda表达式了
+            /*@Override
+            public void up() {
+                System.out.println("ddd");
+            }*/
         };
         flyable.fly(5);
     }
@@ -97,4 +128,5 @@ class Dog {
 
 interface Flyable{
     void fly(int height);
+    //void up();//这里如果有两个抽象方法，Flyable就不能用lambda表达式了
 }

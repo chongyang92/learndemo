@@ -16,6 +16,6 @@ public class DateDemo02 {
         }
         // 2.拿到此刻日期时间对象的毫秒值
         long endTime = new Date().getTime();
-        System.out.println( (endTime - startTime) / 1000.0 +"s");
+        System.out.println( (endTime - startTime) / 1000f +"s");
     }
 }

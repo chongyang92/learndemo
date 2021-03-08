@@ -50,7 +50,6 @@ public class PackegeClass {
         // Integer it1 = new Integer(12); // 手工装箱！
         Integer it2 = 12;
 
-
         Integer it3 = 111 ;
         int it33 = it3.intValue(); // 手工拆箱
         int it333 = it3;

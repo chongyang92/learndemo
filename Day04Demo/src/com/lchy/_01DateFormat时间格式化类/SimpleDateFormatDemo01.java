@@ -1,5 +1,6 @@
 package com.lchy._01DateFormat时间格式化类;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -31,7 +32,7 @@ import java.util.Date;
 
  */
 public class SimpleDateFormatDemo01 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         Date date = new Date();
         System.out.println(date);
 
@@ -46,6 +47,7 @@ public class SimpleDateFormatDemo01 {
         String s1 = sdf1.format(date);
         System.out.println(s1);
 
+        //格式化时间毫秒值
         String s2 = sdf1.format(date.getTime());
         System.out.println(s2);
 

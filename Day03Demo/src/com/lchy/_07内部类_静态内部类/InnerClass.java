@@ -1,5 +1,7 @@
 package com.lchy._07内部类_静态内部类;
 
+import java.util.Map;
+
 /**
     目标：静态内部类
 
@@ -39,6 +41,7 @@ public class InnerClass {
 
 class Outter{
 
+
     public static String address = "北京";
 
     //静态内部类，有static修饰，属于外部类，只会加载一次
@@ -75,4 +78,8 @@ class Outter{
             System.out.println(address);//可以直接访问外部类静态成员变量
         }
     }
+
+
+    static interface StaticIn{}//内部接口，不管有没有static修饰，都是静态的
+    static abstract class AbstractClass{ }
 }

@@ -15,7 +15,7 @@ public class RegexDemo03 {
         //checkTel();
         //checkPhone();
     }
-
+    //校验座机电话号码
     private static void checkPhone() {
         Scanner sc = new Scanner(System.in);
         System.out.print("请您输入电话号码：");
@@ -27,7 +27,7 @@ public class RegexDemo03 {
         }
     }
 
-
+    //校验手机号码13520211988
     private static void checkTel() {
         Scanner sc = new Scanner(System.in);
         System.out.print("请您输入手机号码：");
