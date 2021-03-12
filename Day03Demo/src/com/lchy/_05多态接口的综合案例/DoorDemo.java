@@ -1,14 +1,10 @@
 package com.lchy._05多态接口的综合案例;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-
 /**
     目标：门和门铃
 
-    想象一个家庭的所有门，基本有这几类：
-        大门、卧室门、厨房门
+    想象一个家庭的所有门，门有材质、品牌、安装位置（大门、屋门、厨房），可以开、关，高级一点安全门有密码锁还可以报警。
+
 
  */
 public class DoorDemo {
@@ -113,6 +109,7 @@ class HouseDoor extends AbstractDoor implements Door,Safable{
     }
 }
 
+//将门抽象出材质属性和组装方法
 abstract class AbstractDoor{
     private String material;
 
@@ -135,6 +132,7 @@ abstract class AbstractDoor{
     public abstract void partsTogether();
 }
 
+//门最基本的功能，开、关
 interface Door{
     void open();
     void close();
@@ -150,6 +148,7 @@ enum Brand{
     XIMENZI,XIAOMI,TAOHUAYUAN;
 }
 
+//门上安装音乐门铃
 class MusicBell implements Belling{
 
     @Override
@@ -158,6 +157,7 @@ class MusicBell implements Belling{
     }
 }
 
+//门上安装普通门铃
 class NormalBell implements Belling{
 
     @Override
@@ -166,10 +166,8 @@ class NormalBell implements Belling{
     }
 }
 
+//门铃，必须肯定有响声
 interface Belling{
     //响铃
     void sound();
 }
-
-
-

@@ -12,14 +12,15 @@ package com.lchy._15单例模式;
         （1）饿汉单例设计模式：
                 --通过类获取单例对象的时候，对象已经提前做好了！饿汉很饿去了包子铺，包子已经准备好了。
                 --实现步骤：
-                    1.定义一个单例类
-                    2.私有的构造器
+                 a.定义一个类，把构造器私有。
+                 b.定义一个静态变量存储一个对象。
+                 c.提供一个返回单例对象的方法。
         （2）懒汉单例设计模式；
  */
 public class SingleInstanceDemo01 {
     public static void main(String[] args) {
-        SingleInstance02 s1 = SingleInstance02.getInstance();
-        SingleInstance02 s2 = SingleInstance02.getInstance();
+        SingleInstance01 s1 = SingleInstance01.getInstance();
+        SingleInstance01 s2 = SingleInstance01.getInstance();
         System.out.println(s1 == s2);
     }
 }
@@ -34,6 +35,8 @@ class SingleInstance01{
     public static int num = 5;
 
     private String name = test();
+
+    private int salary;
 
     private int age = testAge();
 
@@ -54,7 +57,7 @@ class SingleInstance01{
 
     public int testAge(){
         System.out.println("testAge");
-        return 30;
+        return salary;
     }
 
     //有加载但是未被执行

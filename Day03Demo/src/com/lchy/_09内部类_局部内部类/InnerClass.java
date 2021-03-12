@@ -27,6 +27,7 @@ public class InnerClass {
 
     public static void main(String[] args) {
         class A{
+
             private String name;
 
             public void test(){
