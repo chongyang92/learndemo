@@ -33,7 +33,21 @@ public class GenericDemo {
 //传入一个String,E就是Sting,其方法全部替换为操作String类型的方法，即方法表示的E全部替换为String
 class MyArrayList<E>{
     private ArrayList list = new ArrayList();
+    private static MyArrayList Mylist;
+    private E e;
+    static {
+        Mylist = new MyArrayList();
+        class A<E>{
+            public void test(){}
+        }
+    }
 
+    public MyArrayList(){
+
+    }
+    public MyArrayList(E e){
+        this.e = e;
+    }
     public void add(E e){
         list.add(e);
     }
@@ -42,8 +56,15 @@ class MyArrayList<E>{
         list.remove(e);
     }
 
+    public E get(int index){
+        return (E) list.get(index);
+    }
+
     @Override
     public String toString() {
         return list.toString();
+    }
+    public static void show(){
+        System.out.println("自定义泛型类");
     }
 }

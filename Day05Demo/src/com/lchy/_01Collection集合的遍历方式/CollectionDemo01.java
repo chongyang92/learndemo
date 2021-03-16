@@ -51,5 +51,11 @@ public class CollectionDemo01 {
             //System.out.println(it.next());//不能检查一次取两次
             System.out.println(it.next());
         }
+
+        System.out.println("-----------普通for循环-------");
+        for (int i = 0; i < lists.size(); i++) {
+            //lists.
+        }
+        System.out.println("-----------普通for循环不能遍历Collection，没有索引-------");
     }
 }
