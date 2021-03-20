@@ -1,8 +1,6 @@
 package com.lchy._01Collection集合的遍历方式;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
+import java.util.*;
 import java.util.function.Consumer;
 
 /**
@@ -42,7 +40,7 @@ import java.util.function.Consumer;
  */
 public class CollectionDemo03 {
     public static void main(String[] args) {
-        Collection<String> lists = new ArrayList<>();
+        Collection<String> lists = new TreeSet<>();
         lists.add("赵敏");
         lists.add("小昭");
         lists.add("殷素素");
@@ -60,13 +58,22 @@ public class CollectionDemo03 {
         System.out.println(it.next());*/
         while (it.hasNext()){
             //System.out.println(it.next());//不能检查一次取两次
-            System.out.println(it.next());
+            String str = it.next();
+            System.out.println(str);
+            /*if("小昭".equals(str)) {
+                it.remove();
+                System.out.println("删除了："+str);
+            }*/
+            //lists.remove("小昭");//这种删除方式会报错ConcurrentModificationException
         }
 
         System.out.println("---------foreach集合--------");
         //2.foreach遍历集合
         for(String str : lists){
             System.out.println(str);
+            /*if(str.equals("小昭")) {
+                lists.remove(str);
+            }*/
         }
 
         System.out.println("---------foreach数组--------");
@@ -77,6 +84,9 @@ public class CollectionDemo03 {
 
         System.out.println("---------lambda表达式----------");
         lists.forEach(s -> {
+            if(s.equals("小昭")){
+                lists.remove(s);
+            }
             System.out.println(s);
         });
         System.out.println("---------lambda表达式简化----------");

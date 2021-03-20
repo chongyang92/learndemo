@@ -59,7 +59,7 @@ public class GenericDemo {
 
     }*/
 
-    public static void run(ArrayList<? extends Car> cars){//?代表调用run方法时传入的类型，extends表示必须继承后面的Car类
+    public static void run(ArrayList<? extends Car> cars){//?代表调用run方法时传入的类型，extends表示必须是Car类的子类
 
     }
 }

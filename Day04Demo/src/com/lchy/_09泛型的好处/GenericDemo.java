@@ -19,14 +19,14 @@ public class GenericDemo {
         for (int i = 0; i < list.size(); i++) {
             Object object = list.get(i);
             System.out.println(object);
-            String s = (String)object;//ClassCastException
+            String s = (String)object;//ClassCastException，无法转换Boolean类型为String
             System.out.println(s);
         }
 
         ArrayList<String> listStr = new ArrayList<>();
         listStr.add("赵敏");
         listStr.add("张无忌");
-        /*listStr.add(false);
+        /*listStr.add(false);//编译阶段检查，这里直接报错，统一了类型，减少出错
         listStr.add(99.9);*/
 
         for (int i = 0; i < listStr.size(); i++) {

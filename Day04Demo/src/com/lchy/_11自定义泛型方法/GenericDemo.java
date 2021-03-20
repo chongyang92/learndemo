@@ -40,12 +40,34 @@ public class GenericDemo {
         if(nums != null && nums.length > 0){
             for (int i = 0; i < nums.length; i++) {
                 T ele = nums[i];
-                stringBuilder.append(i == nums.length ? ele : ele + ",");
+                stringBuilder.append(i == nums.length -1  ? ele : ele + ",");
             }
         }
 
         stringBuilder.append("]");
         return stringBuilder.toString();
     }
+}
+
+//抽象类中也可以定义抽象的泛型方法
+abstract class A{
+    public abstract <T,E> String myToString(T t);
+}
+
+class B{
+    public <T> String myToString(T t){
+        return "";
+    }
+}
+
+class C extends A{
+
+    //@Override
+    public <T,E> String myToString(T t) {
+        return null;
+    }
+}
+
+class D extends B{
 
 }
