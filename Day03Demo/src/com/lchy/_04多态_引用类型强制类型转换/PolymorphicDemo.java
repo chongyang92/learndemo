@@ -27,6 +27,7 @@ public class PolymorphicDemo {
     public static void main(String[] args) {
         //父类型 对象名称 = new 子类构造器;
         Animal dogAnimal = new Dog();//改为狗，就是组件化切换
+        System.out.println(dogAnimal.name);//变量，编译和运行都看左边
         dogAnimal.run();
 
         //dogAnimal.lookdoor();//不能调用独有方法

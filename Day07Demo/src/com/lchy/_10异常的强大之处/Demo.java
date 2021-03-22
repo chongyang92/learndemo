@@ -1,5 +1,6 @@
-package com.lchy;
+package com.lchy._10异常的强大之处;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
