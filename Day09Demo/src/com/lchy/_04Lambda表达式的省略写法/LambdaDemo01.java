@@ -26,23 +26,22 @@ public class LambdaDemo01 {
                 System.out.println(s);
             }
         });
-
+        //省略接口名，将方法参数列表提上来
         names.forEach((String s) -> {
                 System.out.println(s);
         });
-
+        //省略参数类型
         names.forEach((s) -> {
             System.out.println(s);
         });
-
+        //一个参数省略方法参数小括号，多个不能省
         names.forEach(s -> {
             System.out.println(s);
         });
-
+        //一条执行语句，省略{}，多条语句不能省
         names.forEach(s -> System.out.println(s) );
-
-        names.forEach(System.out::println);
-
+        //最终可简化为方法引用，即参数s和的个数和类型和println()相同，即可使用方法引用
+        names.forEach(System.out::println);//此处方法引用分类中的，对象::成员方法引用
 
     }
 }

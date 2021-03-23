@@ -63,6 +63,5 @@ public class StreamDemo01 {
         List<String> rsList = list.stream().filter(s -> s.startsWith("张")).filter(s -> s.length() == 3).collect(Collectors.toList());
         System.out.println(rsList);
 
-
     }
 }

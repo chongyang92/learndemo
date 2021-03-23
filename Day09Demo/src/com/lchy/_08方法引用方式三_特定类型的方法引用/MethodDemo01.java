@@ -40,7 +40,7 @@ public class MethodDemo01 {
         Arrays.sort(strs, ( s1,  s2 ) ->  s1.compareToIgnoreCase(s2));
 
         // 特定类型的方法引用：
-        Arrays.sort(strs,  String::compareToIgnoreCase);
+        Arrays.sort(strs, String::compareToIgnoreCase);
 
         System.out.println(Arrays.toString(strs));
 

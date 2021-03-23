@@ -19,6 +19,7 @@ import java.util.List;
         5.数学操作异常：ArithmeticException
         6.数字转换异常：NumberFormatException
         7.非法状态异常IllegalStateException：流已关闭异常
+        8.栈内存溢出错误：StackOverflowError
 
 
 

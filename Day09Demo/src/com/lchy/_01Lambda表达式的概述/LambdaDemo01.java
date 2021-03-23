@@ -35,12 +35,12 @@ public class LambdaDemo01 {
             public long getId(){return 0;}
         }*/
         //匿名内部类
-        /*new Thread(){
+        Thread th = new Thread(){
             @Override
             public long getId() {
                 return super.getId();
             }
-        };*/
+        };
         //匿名内部类，相当于创建了Thread的子类，但是没有起类名，而是用的父类Thread
         //返回的是子类引用，这就形成了类多态，即Fu fu = new Zi();只不过Zi被省略了，
         //变成了Fu fu = new Fu(){重写的方法}

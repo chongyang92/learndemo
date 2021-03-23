@@ -20,5 +20,10 @@ public class FunctionalInterfaceDemo {
                 System.out.println("test");
         }).test(null);
 
+        new Handle(s -> {
+            System.out.println("test");
+        }).test(null);
+
+        new Handle(s -> System.out.println("test")).test(null);
     }
 }

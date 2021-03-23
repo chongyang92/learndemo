@@ -39,6 +39,7 @@ public class StreamDemo02 {
         list.stream().map((Function<String, Object>) s -> "优秀的：" + s).forEach(System.out::println);
         System.out.println("-------最简lambda表达式-------");
         list.stream().map(s -> "优秀的：" + s).forEach(System.out::println);
+        list.stream().map(String::new).forEach(System.out::println);
 
         //需求：把名称都加工成学生对象放上去！
         list.stream().map(name -> new Student(name)).forEach(System.out::println);

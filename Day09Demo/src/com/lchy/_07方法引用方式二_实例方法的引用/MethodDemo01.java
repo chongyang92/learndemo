@@ -3,6 +3,7 @@ package com.lchy._07方法引用方式二_实例方法的引用;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.function.Consumer;
 
 /**
      目标：方法引用有四种形式：
