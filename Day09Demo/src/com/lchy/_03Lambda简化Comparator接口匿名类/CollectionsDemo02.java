@@ -59,6 +59,7 @@ public class CollectionsDemo02 {
         });
         /**Lambda表达式省略写法一：只有一行，{}可以省略，如果有返回语句，必须省略return不写**/
         Collections.sort(oranges1, (orange1, orange2) -> Double.compare(orange1.getWeight() , orange2.getWeight()));
+        Collections.sort(oranges1, Comparator.comparingDouble(Orange::getWeight));
 
         List<String> list = new ArrayList<>();
         list.add("ni");

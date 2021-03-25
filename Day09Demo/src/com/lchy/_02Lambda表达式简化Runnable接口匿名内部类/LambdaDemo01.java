@@ -24,6 +24,7 @@ public class LambdaDemo01 {
                 System.out.println("haha");
             }
         });
-        
+
+        Thread t1 = new Thread(() -> System.out.println("haha"));
     }
 }

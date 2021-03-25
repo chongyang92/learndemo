@@ -1,8 +1,6 @@
 package com.lchy._15收集Stream流;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.function.IntFunction;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -43,14 +41,30 @@ public class StreamDemo {
 
         //把Stream流转换成数组
         Stream<String> zhangList2 = list.stream().filter(s -> s.startsWith("张"));
-        zhangList2.toArray(new IntFunction<String[]>() {
+        /*zhangList2.toArray(new IntFunction<String[]>() {
             @Override
             public String[] apply(int value) {
                 return new String[value];
             }
-        });
-        zhangList2.toArray(value -> new String[value]);//定义数组的长度
-        zhangList2.toArray(String[]::new);
+        });*/
+        //zhangList2.toArray(value -> new String[value]);//定义数组的长度
+        zhangList2.toArray(String[]::new);//记住这种格式，本来返回的是Object[],如果想转换，就写成String[]::new这种形式，这里的String,要和集合中的List<String>泛型一致
 
+        List<Integer> integerList = new ArrayList<>();
+        integerList.add(4);
+        integerList.add(5);
+        integerList.add(8);
+        integerList.add(3);
+        integerList.stream().toArray(new IntFunction<Integer[]>() {
+            @Override
+            public Integer[] apply(int value) {
+                return new Integer[value];
+            }
+        });
+        integerList.stream().toArray(value -> new Integer[value]);
+        Integer[] integers = integerList.stream().toArray(Integer[]::new);
+        for (Integer integer : integers) {
+            System.out.println(integer);
+        }
     }
 }
