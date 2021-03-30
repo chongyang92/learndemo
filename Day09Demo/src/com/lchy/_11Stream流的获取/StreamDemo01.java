@@ -40,5 +40,24 @@ public class StreamDemo01 {
         Stream<String> arrStr = Arrays.stream(strings);
         Stream<String> arrStr1 = Stream.of(strings);
         Stream.of(collection);
+
+    }
+
+}
+
+
+enum SS{
+    HA("ha",6),
+    HE("he"),
+    HEI("hei",5);
+    private String name;
+    private int age;
+
+    SS(String name, int age){
+        this.name = name;
+        this.age = age;
+    }
+    SS(String name){
+        this.name = name;
     }
 }
