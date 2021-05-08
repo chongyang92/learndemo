@@ -1,12 +1,8 @@
 package com.lchy._00字符流的使用;
 
-import javax.annotation.processing.Filer;
-import javax.sound.sampled.AudioFormat;
-import java.beans.Encoder;
 import java.io.*;
+import java.nio.charset.Charset;
 import java.util.Arrays;
-//import java.util.function.BinaryOperator;
-//import java.util.stream.Stream;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
@@ -35,6 +31,45 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  */
 public class FileReaderDemo01 {
     public static void main(String[] args) throws Exception {
+        System.out.println("--------字节流以字节为单位直接从文件中取出字节，编码格式为UTF-8-----------");
+        FileInputStream inputStream = new FileInputStream("Day10Demo/src/dilei01.txt");
+        byte[] bytes1 = new byte[1];
+        byte[] bytes2 = new byte[10];
+        int j = 0;
+        int num = 0;
+        while (inputStream.read(bytes1) != -1){
+            String str = Integer.toBinaryString(bytes1[0]);
+            System.out.println(str.length() > 8 ? str.substring(24,32) : str);
+
+            bytes2[j++] = bytes1[0];
+        }
+
+        switch (j){
+            case 1:
+                //UTF-8是1个字节
+                num = (0xff & bytes2[0]);
+                break;
+            case 2:
+                //UTF-8是2个字节
+                num = (0xff & bytes2[0]) << 8 | (0xff & bytes2[1]);
+                break;
+            case 3:
+                //UTF-8是3个字节
+                num = (0xff & bytes2[0]) << 16 | (0xff & bytes2[1]) << 8 | (0xff & bytes2[2]);
+                break;
+            case 4:
+                //UTF-8是4个字节
+                num = (0xff & bytes2[0]) << 24 | (0xff & bytes2[1]) << 16 | (0xff & bytes2[2]) << 8 | (0xff & bytes2[3]);
+                break;
+        }
+
+        System.out.println("toBinaryString: "+Integer.toBinaryString(num));
+        //char只有两个字节的空间
+        //char cc = (char)num;
+        System.out.println(Integer.toHexString(num).toUpperCase());
+        //𠃗 11110000 10100000 10000011 10010111
+        inputStream.close();
+        System.out.println("------------上面是字节流------------------");
         /*//1.创建一个文件对象定位源文件
         File file = new File("Day10Demo/src/dilei01.txt");
         //2.创建一个字符输入流管道与源文件接通
@@ -50,32 +85,38 @@ public class FileReaderDemo01 {
         System.out.println((char)code3);
         int code4 = reader.read();
         System.out.println(code4);*/
-        //
+        //dμ磊𠃗
         int c,i= 0;
         StringBuilder aa = new StringBuilder();
         while ((c = reader.read()) != -1){
-            System.out.println();
+            System.out.println("ch:toBinaryString " + Integer.toBinaryString(c));
+            System.out.println("ch:toHexString " + Integer.toHexString(c).toUpperCase());
             char ch = (char)c;
             System.out.println(i++ +":"+ch);
             System.out.println("c: "+(0xffffffff & c));
             System.out.println("ch: "+(0xffffffff & ch));
-            System.out.println("ch:Integer " + Integer.toBinaryString(c));
+
             byte[] bytes = String.valueOf(ch).getBytes();
             System.out.println("len: "+bytes.length);
             for (byte aByte : bytes) {
-                System.out.println(Integer.toBinaryString(aByte));
+                String str = Integer.toBinaryString(aByte);
+                System.out.println(str.length() > 8 ? str.substring(24,32) : str);
             }
 
             System.out.println(aa.append(ch));
+            System.out.println("+++++++++++++++++");
         }
 
         reader.close();
-        System.out.println("------------------------------");
-        FileInputStream inputStream = new FileInputStream("Day10Demo/src/dilei01.txt");
-        byte[] bytes = new byte[1];
-        while (inputStream.read(bytes) != -1){
-            System.out.println(Integer.toBinaryString(bytes[0]));
-        }
 
+        //默认写出文件编码为UTF-8
+        FileWriter fileWriter = new FileWriter("Day10Demo/src/dilei05.txt", Charset.forName("UTF-8"));
+        //FileWriter fileWriter = new FileWriter("Day10Demo/src/dilei02.txt");
+
+        char[] chars1 = Arrays.toString("中".getBytes("GBK")).toCharArray();
+        System.out.println(chars1[0]);
+        //fileWriter.write(chars,0,2);
+        fileWriter.flush();
+        fileWriter.close();
     }
 }

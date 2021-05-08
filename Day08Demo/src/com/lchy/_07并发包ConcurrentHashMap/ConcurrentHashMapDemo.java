@@ -3,6 +3,7 @@ package com.lchy._07并发包ConcurrentHashMap;
 import java.util.Hashtable;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
     目标：并发包的介绍（面试重点中的重点）
@@ -34,12 +35,24 @@ public class ConcurrentHashMapDemo {
         Runnable runnable = new MyRunnable();
         Thread t1 = new Thread(runnable,"线程1");
         Thread t2 = new Thread(runnable,"线程2");
+        Thread t3 = new Thread(runnable,"线程3");
+        Thread t4 = new Thread(runnable,"线程4");
+        Thread t5 = new Thread(runnable,"线程5");
+        Thread t6 = new Thread(runnable,"线程6");
         t1.start();
         t2.start();
+        t3.start();
+        t4.start();
+        t5.start();
+        t6.start();
         try {
             //主线程会抢t1和t2的CPU，但是都不能抢，t1和t2之间是可以相互抢的
             t1.join();//让t1跑完，join方法应该想到，康熙、雍正、乾隆，先让康熙当完皇帝，用在才能即位
             t2.join();//让t2跑完
+//            t3.join();
+            t4.join();
+            //t5.join();
+            t6.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -50,13 +63,15 @@ public class ConcurrentHashMapDemo {
 }
 
 class MyRunnable implements Runnable{
+    AtomicLong count = new AtomicLong(0);
     @Override
     public void run() {
         long start = System.currentTimeMillis();
-        for (int i = 0; i < 500000; i++) {
+        for (int i = 0; i < 5000; i++) {
             ConcurrentHashMapDemo.maps.put(Thread.currentThread().getName()+i,Thread.currentThread().getName()+i);
+            count.incrementAndGet();
         }
         long end = System.currentTimeMillis();
-        System.out.println(Thread.currentThread().getName()+"耗时"+(end-start)/1000.0);
+        System.out.println(Thread.currentThread().getName()+"结果"+count+"耗时"+(end-start)+"ms");
     }
 }
