@@ -7,6 +7,11 @@ import java.io.IOException;
 
 /**
     目标：解决字节输入流读取中文内容输入乱码的问题。
+     IO流的体系：
+     字节流                                   字符流
+     字节输入流          字节输出流              字符输入流     字符输出流
+     InputStream        OutputStream            Reader         Writer      (抽象类)
+     FileInputStream    FileOutputStream        FileReader     FileWriter  (子类实现类)
 
     引入：
         一个一个字节读取中文输出
