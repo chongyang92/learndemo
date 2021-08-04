@@ -1,4 +1,8 @@
 package com.lchy._07继承的使用案例;
+
+import java.io.File;
+import java.io.IOException;
+
 /**
     目标：继承的使用案例。
 
@@ -23,14 +27,17 @@ package com.lchy._07继承的使用案例;
         这样就可以提高代码的复用性：相同代码只需要在父类中写一次就可以了。
  */
 public class TestMain {
-    public static void main(String[] args) {
-        Teacher boNiu = new Teacher();
-        boNiu.setName("播妞"); // 调用继承自父类的
-        boNiu.setAge(18); // 调用继承自父类的
-        System.out.println(boNiu.getName()); // 调用继承自父类的
-        System.out.println(boNiu.getAge()); // 调用继承自父类的
-        boNiu.eat(); // 调用继承自父类的
-        boNiu.teach(); // 调用子类自己的！
+    public static void main(String[] args) throws IOException {
+//        Teacher boNiu = new Teacher();
+//        boNiu.setName("播妞"); // 调用继承自父类的
+//        boNiu.setAge(18); // 调用继承自父类的
+//        System.out.println(boNiu.getName()); // 调用继承自父类的
+//        System.out.println(boNiu.getAge()); // 调用继承自父类的
+//        boNiu.eat(); // 调用继承自父类的
+//        boNiu.teach(); // 调用子类自己的！
+
+        String a ="asd/sd/";
+        System.out.println(new File(a+"../sasd.xml").getCanonicalPath());
 
         // 学生类交给你们自己试试！！
     }

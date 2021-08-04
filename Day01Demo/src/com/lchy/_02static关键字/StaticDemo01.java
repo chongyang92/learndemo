@@ -36,6 +36,10 @@ import java.util.Date;
  *
  */
 public class StaticDemo01 {
+    private String name;
+    protected String proName;
+    String defName;
+    public String pubName;
     public static void main(String[] args) {
         Student student = new Student("张三",28,new Date());
         System.out.println(student);
