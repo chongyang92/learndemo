@@ -1,4 +1,7 @@
 package com.lchy._08继承_子类不能继承父类的内容;
+
+import com.lchy._02static关键字.StaticDemo01;
+
 /**
     目标：子类不能继承父类的内容。
 
@@ -16,27 +19,37 @@ package com.lchy._08继承_子类不能继承父类的内容;
             -- 子类只是可以访问父类的静态成员，父类的静态成员只有一份可以被子类共享访问。
                 共享并非继承。
  */
-public class ExtendsDemo {
+public class ExtendsDemo extends StaticDemo01{
     public static void main(String[] args) {
         Cat c = new Cat();
         // c.run();
 
-
+        ExtendsDemo extendsDemo = new ExtendsDemo();
+        System.out.println(extendsDemo.proName);//protected 访问权限
         Cat.test();
         System.out.println(Cat.schoolName);
 
     }
 }
 
-class Cat extends Animal{
+class Cat extends Animal {
+    public static void main(String[] args) {
+        StaticDemo01 staticDemo01 = new StaticDemo01();
+        System.out.println(staticDemo01.pubName);//只有public访问权限
+    }
 }
 
-class Animal{
+class Animal extends StaticDemo01{
     public static String schoolName ="黑马";
     public static void test(){
     }
 
     private void run(){
+    }
+
+    public static void main(String[] args) {
+        StaticDemo01 staticDemo01 = new StaticDemo01();
+        System.out.println(staticDemo01.pubName);//只有public访问权限
     }
 }
 

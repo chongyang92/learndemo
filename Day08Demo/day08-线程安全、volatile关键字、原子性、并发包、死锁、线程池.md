@@ -1370,7 +1370,7 @@ public class ThreadPoolDemo2 {
         Future<Double> f1 = service.submit(c);
         // Futur 调用get() 获取运算结果
         System.out.println(f1.get());
-
+    
         Future<Double> f2 = service.submit(c);
         System.out.println(f2.get());
 

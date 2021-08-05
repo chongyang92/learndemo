@@ -1,5 +1,7 @@
 package com.lchy._01抽象类的概述;
 
+import java.util.Hashtable;
+
 /**
     目标：抽象类的概述
 
@@ -28,9 +30,9 @@ class Cat extends Animal{
 }
 
 abstract class Animal{
-    /*public void run() {
+    public void run1() {
         System.out.println("动物跑的很快");
-    }*/
+    }
     //子类完成这个功能，但是由自己重写完成
     //抽象方法，没有方法，只有方法签名，必须用abstract修饰
     //有抽象方法，类必须声明为抽象类

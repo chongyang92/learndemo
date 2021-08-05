@@ -74,14 +74,15 @@ public class Anonymity {
         animal.run();
         //animal.go();
 
-        Dog dog = new Dog() { //匿名内部类，new 后面可以是类名
+        //Dog dog = new Dog() { //匿名内部类，new 后面可以是类名
+        new Dog() { //匿名内部类，new 后面可以是类名
             //也可以不重写lookdoor方法
             @Override
             public void lookdoor() {
                 System.out.println("狗看门");
             }
-        };
-        dog.lookdoor();
+        }.lookdoor();
+        //dog.lookdoor();
 
         //换成lambda之后的形式其中()中的参数是  height -> System.out.println("飞起来吧");
         //一个参数可以不用写(),一条语句也不用写{}
