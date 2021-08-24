@@ -8,8 +8,12 @@ package com.lchy._11注解的属性;
             - 格式2：数据类型 属性名() default 默认值;
 
     属性适用的数据类型：
-            八种基本数据类型(int ,short, long, double, byte, char, boolean, float)
-            String, Class
+            1.八种基本数据类型(int ,short, long, double, byte, char, boolean, float)
+            2.String,
+            3.Class,
+            4.枚举，
+            5.注解
+            6.以上类型的一维数组类型
             以上类型都支持
 
     小结：
