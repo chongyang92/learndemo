@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/css" href="../css/xml.css" ?><!--这个样式展示没啥用-->
+<!-- 1.申明 抬头 必须在第一行-->
+<!-- 2.注释，本处就是注释，必须用前后尖括号围起来-->
+<!-- 3.标签（元素），注意一个XML文件只能有一个根标签-->
+<student>
+    <!-- 4.属性信息： id , desc-->
+    <address id = '5' desc = '中国'>
+        <sheng></sheng>
+        <shi></shi>
+    </address>
+    <sql>
+        <!--5.实体字符：在xml文件中，我们不能直接写小于号，等一些特殊字符
+         会与xml文件本身的内容冲突，此时必须用转义的实体字符-->
+        <!--select * from student where age < 18;-->
+        select * from student where age &lt; 18;
+        <!--
+            说明     字符    转义字符
+            小于      <       &lt;
+            大于      >       &gt;
+            双引号    “       &quot;
+            单引号    ‘       &apos;
+            与字符    &       &amp;
+        -->
+        select * from student where age &lt; 18 &amp;&amp; age &gt; 10;
+    </sql>
+    <!--6. 在xml文件中，我们不能直接写小于号，等一些特殊字符
+         会与xml文件本身的内容冲突，此时必须用转义的实体字符
+         或者也可以选择字符数据区，里面的内容可以随便了！-->
+    <sql2>
+        <![CDATA[
+            select * from student where age < 18 && age > 10;
+        ]]>
+    </sql2>
+</student>
+<!-- 小结：1.声明有哪两个常用的属性？ version encoding -->
+<!--      2. 一个XML有几个根元素？ 1个-->
+<!--      3. XML标签命名不能有申明符号？ 空格，冒号-->

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<books id="书架">
+    <book id="0001" desc="第一本">
+        <name>JavaWeb开发教程</name>
+        <author>张小溪</author>
+        <sale>100.00元</sale>
+    </book>
+    <book id="0002">
+        <name>三国演义</name>
+        <author>张小溪</author>
+        <sale>100.00元</sale>
+    </book>
+    <user>
+
+    </user>
+</books>
