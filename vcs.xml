@@ -22,6 +22,10 @@
           <option name="url" value="https://gitee.com/chongyang92/learndemo.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://gitee.com/chongyang92/sinosafe.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="F:\newIdeaWorkspace" />
